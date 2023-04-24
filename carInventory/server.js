@@ -2,6 +2,9 @@ const express = require('express');
 const cors = require('cors');
 const { connectToDatabase } = require('./db');
 
+// Import routers for handling API requests
+const carsRouter = require('./server/routes/cars');
+
 const app = express();
 const port = process.env.PORT || 8082;
 
