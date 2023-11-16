@@ -13,7 +13,7 @@ function CarForm({ handleAdd }) {
   
       const car = { make, model, year, owner, registrationNumber };
   
-      fetch('http://localhost:8082/api/cars', {
+      fetch('https://carinventorybackend.onrender.com/api/cars', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(car)
