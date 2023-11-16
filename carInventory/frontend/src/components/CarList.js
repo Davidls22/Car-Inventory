@@ -17,7 +17,7 @@ function CarList() {
 
   
   const handleDelete = (id) => {
-    fetch(`http://localhost:8082/api/cars/${id}`, {
+    fetch(`https://carinventorybackend.onrender.com/api/cars/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -32,7 +32,7 @@ function CarList() {
   };
 
   const handleUpdate = (updatedCar) => {
-    fetch(`http://localhost:8082/api/cars/${updatedCar._id}`, {
+    fetch(`https://carinventorybackend.onrender.com/api/cars/${updatedCar._id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -63,7 +63,7 @@ const handleUpdateMultiple = () => {
       const oldValuesArr = oldValue.split(",").map((val) => val.trim());
   
       // Make a PUT request to the server to update the cars with the new field value
-      fetch("http://localhost:8082/api/cars/", {
+      fetch("https://carinventorybackend.onrender.com/api/cars/", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
