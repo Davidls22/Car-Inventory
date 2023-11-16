@@ -9,7 +9,7 @@ function CarList() {
   const [editedCar, setEditedCar] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:8082/api/cars")
+    fetch("https://carinventorybackend.onrender.com/api/cars")
       .then((res) => res.json())
       .then((data) => setCars(data))
       .catch((err) => console.log(err));
