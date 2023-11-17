@@ -1,35 +1,70 @@
+/* Global Styles */
+
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f2f2f2;
+  font-family: 'Arial', sans-serif;
+  background-color: #f7f7f7;
   margin: 0;
   padding: 0;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
-.container {
-  max-width: 800px;
-  margin: 0 auto;
+.car-list-container {
+  max-width: 4000px;
   padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
 }
 
 h1 {
-  font-size: 2em;
+  font-size: 2.5em;
   margin-bottom: 20px;
+  color: #3498db;
+  text-align: center;
 }
 
-button {
-  background-color: #4CAF50;
+.toggle-cars-button,
+.update-multiple-button{
+  padding: 20px 15px;
+  margin: 30px;
+  background-color: #3498db;
   color: white;
   border: none;
-  padding: 10px;
+  transition: background-color 0.3s ease;
+  justify-content: center;
+}
+
+.update-button,
+.delete-button,
+.save-button,
+.toggle-form-button,
+.submit-button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 15px;
   margin-bottom: 20px;
   cursor: pointer;
+  border-radius: 4px;
+  display: block;
+  margin: 0 auto;
+  transition: background-color 0.3s ease;
 }
 
-button:hover {
-  background-color: #3e8e41;
+.toggle-cars-button:hover,
+.update-multiple-button:hover,
+.update-button:hover,
+.save-button:hover,
+.toggle-form-button:hover,
+.submit-button:hover {
+  background-color: #2980b9;
 }
 
-table {
+/* Table Styles */
+
+.car-table {
   border-collapse: collapse;
   width: 100%;
   margin-bottom: 20px;
@@ -37,42 +72,51 @@ table {
 
 th, td {
   text-align: left;
-  padding: 8px;
+  padding: 12px;
 }
 
 th {
-  background-color: #4CAF50;
+  background-color: #3498db;
   color: white;
 }
 
 tr:nth-child(even) {
-  background-color: #f2f2f2;
+  background-color: #ecf0f5;
 }
 
-input[type=text], input[type=number] {
+/* Form Styles */
+
+.update-car-form,
+.car-form {
+  margin-top: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #3498db;
+}
+
+.form-input {
   width: 100%;
-  padding: 10px;
-  margin-bottom: 20px;
-  border: none;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
   border-radius: 4px;
   box-sizing: border-box;
 }
 
-label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
+/* Stock Image Styles */
 
-form > button {
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  padding: 10px;
-  margin-top: 20px;
-  cursor: pointer;
-}
-
-form > button:hover {
-  background-color: #3e8e41;
+.stock-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
 }

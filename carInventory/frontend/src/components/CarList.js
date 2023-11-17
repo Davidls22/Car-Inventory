@@ -103,124 +103,131 @@ const handleUpdateMultiple = () => {
     : cars;
 
     return (
-        <div>
-          <h1>Car Inventory</h1>
-          <button onClick={() => setShowOlderCars(!showOlderCars)}>
-            {showOlderCars ? "Show all cars" : "Show cars owned for more than 5 years"}
-          </button>
-          <button onClick={handleUpdateMultiple}>Update Multiple Cars</button>
-          <table>
-            <thead>
-              <tr>
-                <th>Make</th>
-                <th>Model</th>
-                <th>Year</th>
-                <th>Owner</th>
-                <th>Registration Number</th>
-                <th>Delete</th>
-                <th>Update</th>
-              </tr>
-            </thead>
-            <tbody>
-              {filteredCars.map((car) => (
-                <tr key={car._id}>
-                  <td>
-                    {editedCar && editedCar._id === car._id ? (
-                      <input
-                        type="text"
-                        defaultValue={car.make}
-                        onChange={(e) =>
-                          setEditedCar({ ...editedCar, make: e.target.value })
-                        }
-                      />
-                    ) : (
-                      car.make
-                    )}
-                  </td>
-                  <td>
-                    {editedCar && editedCar._id === car._id ? (
-                      <input
-                        type="text"
-                        defaultValue={car.model}
-                        onChange={(e) =>
-                          setEditedCar({ ...editedCar, model: e.target.value })
-                        }
-                      />
-                    ) : (
-                      car.model
-                    )}
-                  </td>
-                  <td>
-                    {editedCar && editedCar._id === car._id ? (
-                      <input
-                        type="number"
-                        defaultValue={car.year}
-                        onChange={(e) =>
-                          setEditedCar({
-                            ...editedCar,
-                            year: parseInt(e.target.value),
-                          })
-                        }
-                      />
-                    ) : (
-                      car.year
-                    )}
-                  </td>
-                  <td>
-                    {editedCar && editedCar._id === car._id ? (
-                      <input
-                        type="text"
-                        defaultValue={car.owner}
-                        onChange={(e) =>
-                          setEditedCar({ ...editedCar, owner: e.target.value })
-                        }
-                      />
-                    ) : (
-                      car.owner
-                    )}
-                  </td>
-                  <td>
-                    {editedCar && editedCar._id === car._id ? (
-                      <input
-                        type="text"
-                        defaultValue={car.registrationNumber}
-                        onChange={(e) =>
-                          setEditedCar({
-                            ...editedCar,
-                            registrationNumber: e.target.value,
-                          })
-                        }
-                      />
-                    ) : (
-                      car.registrationNumber
-                    )}
-      </td>
-              <td>
-                <button onClick={() => handleDelete(car._id)}>Delete</button>
-              </td>
-              <td>
-                {editedCar && editedCar._id === car._id ? (
-                  <button onClick={() => handleSave(editedCar)}>Save</button>
-                ) : (
-                  <button onClick={() => handleEdit(car)}>Update</button>
-                )}
-              </td>
+      <div className="car-list-container">
+        <h1>Motor Inventory System</h1>
+        <button className="toggle-cars-button" onClick={() => setShowOlderCars(!showOlderCars)}>
+          {showOlderCars ? "Show all cars" : "Show cars owned for more than 5 years"}
+        </button>
+        <button className="update-multiple-button" onClick={handleUpdateMultiple}>
+          Update Multiple Cars
+        </button>
+        <table className="car-table">
+          <thead>
+            <tr>
+              <th>Make</th>
+              <th>Model</th>
+              <th>Year</th>
+              <th>Owner</th>
+              <th>Registration Number</th>
+              <th>Delete</th>
+              <th>Update</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
-      {selectedCar ? (
-        <UpdateCarForm
-          car={selectedCar}
-          handleUpdate={handleUpdate}
-          setSelectedCar={setSelectedCar}
-        />
-      ) : (
-        <CarForm handleAdd={handleAdd} />
-      )}
-    </div>
-  );
-}
+          </thead>
+          <tbody>
+            {filteredCars.map((car) => (
+              <tr key={car._id}>
+                <td>
+                  {editedCar && editedCar._id === car._id ? (
+                    <input
+                      className="edit-input"
+                      type="text"
+                      defaultValue={car.make}
+                      onChange={(e) =>
+                        setEditedCar({ ...editedCar, make: e.target.value })
+                      }
+                    />
+                  ) : (
+                    car.make
+                  )}
+                </td>
+                <td>
+                  {editedCar && editedCar._id === car._id ? (
+                    <input
+                      className="edit-input"
+                      type="text"
+                      defaultValue={car.model}
+                      onChange={(e) =>
+                        setEditedCar({ ...editedCar, model: e.target.value })
+                      }
+                    />
+                  ) : (
+                    car.model
+                  )}
+                </td>
+                <td>
+                  {editedCar && editedCar._id === car._id ? (
+                    <input
+                      className="edit-input"
+                      type="number"
+                      defaultValue={car.year}
+                      onChange={(e) =>
+                        setEditedCar({
+                          ...editedCar,
+                          year: parseInt(e.target.value),
+                        })
+                      }
+                    />
+                  ) : (
+                    car.year
+                  )}
+                </td>
+                <td>
+                  {editedCar && editedCar._id === car._id ? (
+                    <input
+                      className="edit-input"
+                      type="text"
+                      defaultValue={car.owner}
+                      onChange={(e) =>
+                        setEditedCar({ ...editedCar, owner: e.target.value })
+                      }
+                    />
+                  ) : (
+                    car.owner
+                  )}
+                </td>
+                <td>
+                  {editedCar && editedCar._id === car._id ? (
+                    <input
+                      className="edit-input"
+                      type="text"
+                      defaultValue={car.registrationNumber}
+                      onChange={(e) =>
+                        setEditedCar({
+                          ...editedCar,
+                          registrationNumber: e.target.value,
+                        })
+                      }
+                    />
+                  ) : (
+                    car.registrationNumber
+                  )}
+                </td>
+                <td>
+                  <button className="delete-button" onClick={() => handleDelete(car._id)}>Delete</button>
+                </td>
+                <td>
+                  {editedCar && editedCar._id === car._id ? (
+                    <button className="save-button" onClick={() => handleSave(editedCar)}>Save</button>
+                  ) : (
+                    <button className="update-button" onClick={() => handleEdit(car)}>Update</button>
+                  )}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        {selectedCar ? (
+          <UpdateCarForm
+            car={selectedCar}
+            handleUpdate={handleUpdate}
+            setSelectedCar={setSelectedCar}
+          />
+        ) : (
+          <CarForm handleAdd={handleAdd} />
+        )}
+      </div>
+    );
+  }
 
 export default CarList;
 

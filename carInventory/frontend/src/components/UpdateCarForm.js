@@ -29,50 +29,56 @@ function UpdateCarForm({ car = {}, handleUpdate }) {
 
   // Return a form element with input fields for updating the car properties and a submit
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
+    <form className="update-car-form" onSubmit={handleSubmit}>
+      <label className="form-label">
         Make:
         <input
           type="text"
           value={make}
           onChange={(e) => setMake(e.target.value)}
+          className="form-input"
         />
       </label>
-      <label>
+      <label className="form-label">
         Model:
         <input
           type="text"
           value={model}
           onChange={(e) => setModel(e.target.value)}
+          className="form-input"
         />
       </label>
-      <label>
+      <label className="form-label">
         Year:
         <input
           type="number"
           value={year}
-          onChange={(e) => setYear(e.target.value)}
+          onChange={(e) => setYear(parseInt(e.target.value))}
+          className="form-input"
         />
       </label>
-      <label>
+      <label className="form-label">
         Owner:
         <input
           type="text"
           value={owner}
           onChange={(e) => setOwner(e.target.value)}
+          className="form-input"
         />
       </label>
-      <label>
+      <label className="form-label">
         Registration Number:
         <input
           type="text"
           value={registrationNumber}
           onChange={(e) => setRegistrationNumber(e.target.value)}
+          className="form-input"
         />
       </label>
-      <button type="submit">Update Car</button>
+      <button type="submit" className="submit-button">Update Car</button>
     </form>
   );
 }
+
 
 export default UpdateCarForm;
